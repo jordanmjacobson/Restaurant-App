@@ -15,10 +15,10 @@ export default class App extends React.Component {
       <div>
         <Router>
           <Routes>
-          <Route exact path="/" element={<Homepage/>}/>
-          <Route exact path="/menu" element={<Menu/>}/>
-          <Route exact path="/order" element={<Order/>}/>
-          <Route exact path='/reservations' element = {<Reservations/>}/>
+            <Route exact path="/" element={<Homepage/>}/>
+            <Route exact path="/menu" element={<Menu/>}/>
+            <Route exact path="/order" element={<Order/>}/>
+            <Route exact path='/reservations' element = {<Reservations/>}/>
           </Routes>
         </Router>
       </div>
