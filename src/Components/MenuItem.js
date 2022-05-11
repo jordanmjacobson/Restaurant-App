@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import addItem from '../Actions';
+import {addItem} from '../Actions';
 import reducer from '../Reducers'; 
 import {store} from '../Store'
 import {connect} from 'react-redux'
@@ -10,15 +10,16 @@ class MenuItem extends React.Component{
     constructor(props){
         super(props)
         this.addToOrder = this.addToOrder.bind(this)
+
     }
-    addToOrder(itemName, itemPrice){
+    addToOrder(item){
         setTimeout(() => {
-            const cartItem = {}
-            cartItem[itemName] = itemPrice
-            this.props.addToCart(cartItem);
+            //const cartItem = {}
+            //cartItem[itemName] = itemPrice
+            this.props.addToCart(item);
             console.log(this.props.cart);
             console.log(Object.keys(this.props.cart))
-            console.log(this.props.cart[itemName])
+            //console.log(this.props.cart[itemName])
         }, 10)
        
     }
@@ -29,7 +30,7 @@ class MenuItem extends React.Component{
                <p>
                    {this.props.name}: {' '}
                    {this.props.price}
-                   <button onClick = {() => this.addToOrder(this.props.name, this.props.price)}>Add to order!</button>
+                   <button onClick = {() => this.addToOrder(this.props.name)}>Add to order!</button>
                </p>
             </div>
         );
